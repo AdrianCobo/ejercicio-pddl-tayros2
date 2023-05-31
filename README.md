@@ -56,3 +56,8 @@ Intentamos utilizar contents como always-within, hold-after... pero no están so
 # Problemas implementados
 
 En el problema 0 se muestra el funcionamiento de la recogida de objetos con prioridad y como después el robot recoge el resto de objetos de la casa, en el 1 y 2 se muestra como funciona la apertura y cierre de puertas que solicita el humano y en el 3 como se recogen los objetos de la casa de forma normal al no haber ninguna petición de ningún humano.
+
+# Ejecucion:
+
+1. instalar popf
+2. $ ros2 run popf popf pddl/house_granny_domain.pddl pddl/house_granny_problem_0.pddl
