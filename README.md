@@ -10,8 +10,8 @@ El dominio debe permitir:
   - Platos y cubiertos: cocina
   - Herramientas: Garage
   - Ropa: Dormitorio
-- Hay una persona en la casa (la abuelita), que generalmente está en su habitación. Podría estar en otro sitio.
-- La abuelita podría pedir que hagas algo por ella, y esta tarea tendría prioridad sobre las tareas de recogida de objetos del robot. Ejemplo:
+  - Hay una persona en la casa (la abuelita), que generalmente está en su habitación. Podría estar en otro sitio.
+  - La abuelita podría pedir que hagas algo por ella, y esta tarea tendría prioridad sobre las tareas de recogida de objetos del robot. Ejemplo:
   - Abrir/cerrar la puerta de casa.
   - Traer un vaso de leche de la cocina.
   - Traer le medicina del salón.
@@ -39,7 +39,15 @@ El motivo por el cual esto supuso un problema es que al usar durative-actions, e
 
 2. Que el robot no cambie de habitación a la vez por una puerta y por un sitio donde no hay puerta.
 
-Uno de los requerimientos de este ejercicio es que nos basásemos en un entorno de nuestros simuladores(home) y que pudiese pasar también el robot de una habitación a otra sin tener porqué haber una puerta siempre y cuando estuviesen conectadas de algún modo. Para resolver esto, pensamos en varias maneras de como poder evitar que se ejecutasen las dos acciones a la vez; añadiendo predicados de "not_moving y moving", usando over alls, ... pero nada de esto parecía funcionar. Por esto decidimos hacer que las acciones move_by_door y move_without_door no fuesen durative_actions.
+Uno de los requerimientos de este ejercicio es que nos basásemos en un entorno de nuestros simuladores(home) y que pudiese pasar también el robot de una habitación a otra sin tener porqué haber una puerta siempre y cuando estuviesen conectadas de algún modo. Para resolver esto, pensamos en varias maneras de como poder evitar que se ejecutasen las dos acciones a la vez; añadiendo predicados de "not_moving y moving", usando over alls, ... pero nada de esto parecía funcionar. Por esto decidimos hacer que las acciones move_by_door y move_without_door no fuesen durative_actions. También nos dimos cuenta de que cada accion debia de eliminar al principio de la ejecución la accion que requeria para su precondicion y al final su consecuencia.
+
+Ejemplo brazo que va a coger algo:
+
+- precondicion
+  - Al principio:Mano libre
+- Resultado
+  Al principio: no (mano libre)
+  Al final: mano ocupada
 
 3. Uso de prioridades.
 
