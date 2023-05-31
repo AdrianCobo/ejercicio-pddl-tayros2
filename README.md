@@ -59,5 +59,5 @@ En el problema 0 se muestra el funcionamiento de la recogida de objetos con prio
 
 # Ejecucion:
 
-1. instalar popf
+1. tener instalado popf
 2. $ ros2 run popf popf pddl/house_granny_domain.pddl pddl/house_granny_problem_0.pddl
